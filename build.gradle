@@ -15,10 +15,23 @@ dependencies {
 }
 
 application {
-    mainClassName = 'com.fun.SwitchExpressions' // update this to the class you'd like to run.
+    mainClassName = 'com.fun.NullOnPurpose' // update this to the class you'd like to run.
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_14
     targetCompatibility = JavaVersion.VERSION_14
+}
+
+// These are to compile and run classes that use preview features.
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
+tasks.withType(JavaExec) {
+    jvmArgs = ['--enable-preview', '-XX:+ShowCodeDetailsInExceptionMessages']
+}
+
+tasks.withType(Test) {
+    jvmArgs += '--enable-preview'
 }
