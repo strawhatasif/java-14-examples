@@ -14,6 +14,6 @@ public record Customer (String customerID, String name) {
     @Override
     public String toString() {
         return "The customer's name is " + name +
-                "and their customer ID is: " + customerID;
+                " and their customer ID is: " + customerID;
     }
 };
