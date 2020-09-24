@@ -1,5 +1,8 @@
 package com.fun;
 
+/**
+ * This is using a PREVIEW feature.
+ */
 public class PatternMatchingInstanceOf {
 
     public static void main(String[] args) {
